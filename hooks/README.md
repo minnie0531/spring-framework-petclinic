@@ -47,7 +47,7 @@ chmod +x .git-hooks/*.py
 ./uninstall-hooks.sh
 ```
 
-## 📁 파일 구조
+## 파일 구조
 
 ```
 ├── hooks/                          # Git hook 스크립트들

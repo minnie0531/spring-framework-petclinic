@@ -29,7 +29,7 @@ if [ -z "$COMMIT_MSG_FILE" ]; then
 fi
 
 # Run the Python script with the commit message file
-echo "🔄 Executing commit message enhancement..."
+echo "Executing commit message enhancement..."
 python3 "$PYTHON_SCRIPT" "$COMMIT_MSG_FILE"
 exit_code=$?
 
@@ -40,5 +40,5 @@ if [ $exit_code -ne 0 ]; then
 fi
 
 echo ""
-echo "✅ Commit message enhancement completed!"
+echo "Commit message enhancement completed!"
 exit 0 

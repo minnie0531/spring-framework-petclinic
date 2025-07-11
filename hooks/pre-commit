@@ -13,7 +13,7 @@ PYTHON_SCRIPT="$REPO_ROOT/.git-hooks/pre_commit_check.py"
 
 # Check if Python script exists
 if [ ! -f "$PYTHON_SCRIPT" ]; then
-    echo "❌ Error: Pre-commit script not found at $PYTHON_SCRIPT"
+    echo "Error: Pre-commit script not found at $PYTHON_SCRIPT"
     exit 1
 fi
 
@@ -28,7 +28,7 @@ exit_code=$?
 if [ $exit_code -ne 0 ]; then
     echo ""
     echo "Pre-commit hook failed with exit code $exit_code"
-    echo "💡 Fix the issues above and try committing again."
+    echo "Fix the issues above and try committing again."
     exit $exit_code
 fi
 

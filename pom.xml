@@ -88,6 +88,9 @@
         <docker.jib-maven-plugin.version>3.4.5</docker.jib-maven-plugin.version>
         <docker.image.prefix>springcommunity</docker.image.prefix>
 
+        <!-- Git Hooks -->
+        <hooks.skip>false</hooks.skip>
+
     </properties>
 
     <dependencyManagement>
@@ -511,6 +514,26 @@
                     </execution>
                 </executions>
             </plugin>
+            
+                         <!-- Git Hooks Auto-Installation Plugin -->
+             <plugin>
+                 <groupId>org.codehaus.mojo</groupId>
+                 <artifactId>exec-maven-plugin</artifactId>
+                 <version>3.1.0</version>
+                 <executions>
+                     <execution>
+                         <id>install-git-hooks</id>
+                         <phase>initialize</phase>
+                         <goals>
+                             <goal>exec</goal>
+                         </goals>
+                         <configuration>
+                             <executable>${project.basedir}/install-hooks.sh</executable>
+                             <skip>${hooks.skip}</skip>
+                         </configuration>
+                     </execution>
+                 </executions>
+             </plugin>
 
         </plugins>
     </build>

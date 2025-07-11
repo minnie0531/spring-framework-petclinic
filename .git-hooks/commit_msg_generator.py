@@ -113,7 +113,7 @@ def main():
         diff_content = get_staged_diff()
         file_changes = get_staged_files()
         
-        print(f"📝 Original message: {original_msg[:50]}..." if len(original_msg) > 50 else f"📝 Original message: {original_msg}")
+        print(f"Original message: {original_msg[:50]}..." if len(original_msg) > 50 else f"Original message: {original_msg}")
         
         # Generate enhanced message
         enhanced_msg = generate_enhanced_message(original_msg, diff_content, file_changes)
