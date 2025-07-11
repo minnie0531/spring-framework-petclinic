@@ -1,0 +1,2 @@
+This is a test file to verify that git hooks are working correctly.
+AI-powered pre-commit and commit-msg hooks have been set up. 
