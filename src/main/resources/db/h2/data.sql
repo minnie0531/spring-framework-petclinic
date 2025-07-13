@@ -1,9 +1,9 @@
-INSERT INTO vets VALUES (default, 'James', 'Carter');
-INSERT INTO vets VALUES (default, 'Helen', 'Leary');
-INSERT INTO vets VALUES (default, 'Linda', 'Douglas');
-INSERT INTO vets VALUES (default, 'Rafael', 'Ortega');
-INSERT INTO vets VALUES (default, 'Henry', 'Stevens');
-INSERT INTO vets VALUES (default, 'Sharon', 'Jenkins');
+INSERT INTO vets VALUES (default, 'James', 'Carter', 'Male');
+INSERT INTO vets VALUES (default, 'Helen', 'Leary', 'Female');
+INSERT INTO vets VALUES (default, 'Linda', 'Douglas', 'Female');
+INSERT INTO vets VALUES (default, 'Rafael', 'Ortega', 'Male');
+INSERT INTO vets VALUES (default, 'Henry', 'Stevens', 'Male');
+INSERT INTO vets VALUES (default, 'Sharon', 'Jenkins', 'Female');
 
 INSERT INTO specialties VALUES (default, 'radiology');
 INSERT INTO specialties VALUES (default, 'surgery');

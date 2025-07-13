@@ -21,6 +21,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.support.MutableSortDefinition;
+import org.springframework.beans.support.PropertyComparator;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
@@ -28,9 +32,6 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.xml.bind.annotation.XmlElement;
-
-import org.springframework.beans.support.MutableSortDefinition;
-import org.springframework.beans.support.PropertyComparator;
 
 /**
  * Simple JavaBean domain object representing a veterinarian.
@@ -44,9 +45,11 @@ import org.springframework.beans.support.PropertyComparator;
 @Table(name = "vets")
 public class Vet extends Person {
 
+    @Column(name = "gender")
+    private String gender;
+
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
-        inverseJoinColumns = @JoinColumn(name = "specialty_id"))
+    @JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "specialty_id"))
     private Set<Specialty> specialties;
 
     protected Set<Specialty> getSpecialtiesInternal() {
@@ -73,6 +76,14 @@ public class Vet extends Person {
 
     public void addSpecialty(Specialty specialty) {
         getSpecialtiesInternal().add(specialty);
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
 }
